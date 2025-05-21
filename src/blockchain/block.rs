@@ -18,10 +18,10 @@ pub struct Block {
 impl Block {
     pub fn new_block(
         pre_block_hash: String,
-        trasactions_input: &[Transaction],
+        transactions_input: &[Transaction],
         height: usize,
     ) -> Block {
-        let block = Block {
+        let mut block = Block {
             timestamp: SystemTime::now()
                 .duration_since(UNIX_EPOCH)
                 .unwrap()
