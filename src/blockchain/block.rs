@@ -2,6 +2,7 @@ extern crate bincode;
 use super::proofofwork::ProofOfWork;
 use super::transaction::Transaction;
 use serde::{Deserialize, Serialize};
+use sled::IVec;
 use std::time::{SystemTime, UNIX_EPOCH};
 use std::{u8, usize};
 
@@ -33,7 +34,7 @@ impl Block {
             height,
         };
 
-        let pow = ProofOfWork::new_proof_of_work(block);
+        let pow = ProofOfWork::new_proof_of_work(block.clone());
         let (nonce, hash) = pow.run();
         block.nonce = nonce;
         block.hash = hash;
@@ -79,5 +80,12 @@ impl Block {
 
     pub fn get_height(&self) -> usize {
         self.height
+    }
+}
+
+impl From<Block> for IVec {
+    fn from(b: Block) -> Self {
+        let bytes = bincode::serialize(&b).unwrap();
+        Self::from(bytes)
     }
 }

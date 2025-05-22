@@ -11,3 +11,4 @@ ring = "0.17.14"
 rust-crypto = "0.2.36"
 serde= { version = "^1", features = ["derive"] }
 sha2 = "0.10.8"
+sled = "0.34.7"
