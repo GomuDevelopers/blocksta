@@ -23,10 +23,18 @@ pub struct Blockchain {
 }
 impl Blockchain {
     pub fn new_blockchain() -> Blockchain {
+    }
+    pub fn create_blockchain(genesis_addr: &str) -> Blockchain {
         let db = sled::open(current_dir().unwrap().join("data")).unwrap();
         let blocks_tree = db.open_tree(BLOCK_TREE).unwrap();
+        let data= blocks_tree.get(TIP_BLOCK_HASH_KEY).unwrap();
+        let tip_hash;
+
+        if data.is_none(){
+            let coinbase_tx=
+        }
+        
     }
-    pub fn create_blockchain(genesis_addr: &str) -> Blockchain {}
     pub fn update_block_tree(block_tree: &Tree, block: &Block) {}
     pub fn get_db(&self) {}
     pub fn get_tip_hash(&self) -> String {}

@@ -5,4 +5,6 @@ mod node;
 mod proofofwork;
 mod server;
 mod transaction;
+mod utile;
 mod wallet;
+mod wallets;
