@@ -4,7 +4,6 @@ on:
         branches: ['master']
 jobs:
   notify:
-    uses:
       uses: GomuDevelopers/global-github-actions/.github/workflows/notify_on_push.yml@main
       env:
            GOMU_BOT_TOKEN: ${{secrets.GOMU_BOT_TOKEN}}
