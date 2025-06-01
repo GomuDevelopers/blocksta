@@ -2,7 +2,7 @@ name: Push notification on the Blocksta repository
 
 on: 
   push:
-    branches: ['master']
+    branches: ['main']
 
 jobs:
   notify:
