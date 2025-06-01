@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use super::wallet::Wallet;
+
 const SUBSIDY: i32 = 10;
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -41,6 +43,10 @@ impl TXInput {
 
     pub fn get_pub_key(&self) -> &[u8] {
         self.pub_key.as_slice()
+    }
+
+    pub fn uses_key(&self, pub_key_hash: &[u8]) -> bool {
+        // compare method if input transaction but key is same as Wallet pub key
     }
 }
 
