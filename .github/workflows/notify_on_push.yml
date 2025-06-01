@@ -1,14 +1,13 @@
 name: Push notification on the Blocksta repository
+
 on: 
-     push:
-        branches: ['master']
+  push:
+    branches: ['master']
+
 jobs:
   notify:
-      uses: GomuDevelopers/global-github-actions/.github/workflows/notify_on_push.yml@main
-      env:
-           GOMU_BOT_TOKEN: ${{secrets.GOMU_BOT_TOKEN}}
-           GOMU_CHANEL_ID: ${{secrets.GOMU_CHANEL_ID}}
-           GITHUB_AUTHOR:  ${{github.event.sender.login}}
-           GITHUB_REPOSITORY: ${{github.repository}}
-           GITHUB_COMMIT: ${{github.event.head_commit.message}}
+    uses: GomuDevelopers/global-github-actions/.github/workflows/notify_on_push.yml@main
+    secrets:
+      GOMU_BOT_TOKEN: ${{ secrets.GOMU_BOT_TOKEN }}
+      GOMU_CHANEL_ID: ${{ secrets.GOMU_CHANEL_ID }}
 
