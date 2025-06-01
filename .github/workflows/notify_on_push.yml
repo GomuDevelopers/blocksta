@@ -2,7 +2,7 @@ name: Push notification on the Blocksta repository
 on: 
      push:
         branches: ['master']
-job:
+jobs:
   notify:
     uses:
       uses: GomuDevelopers/global-github-actions/.github/workflows/notify_on_push.yml@main
