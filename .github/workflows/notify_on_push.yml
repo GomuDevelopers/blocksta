@@ -6,7 +6,7 @@ on:
 
 jobs:
   notify:
-    uses: GomuDevelopers/workflow_template/.github/workflow_template/notify_on_push.yml@master
+    uses: GomuDevelopers/workflows/workflow_template/.github/workflow_template/notify_on_push.yml@master
     secrets:
       GOMU_BOT_TOKEN: ${{ secrets.GOMU_BOT_TOKEN }}
       GOMU_CHANEL_ID: ${{ secrets.GOMU_CHANEL_ID }}
