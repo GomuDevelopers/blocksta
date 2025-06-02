@@ -4,7 +4,6 @@ on:
   push:
     branches: ['main']
 
-
 jobs:
   notify:
     uses: GomuDevelopers/workflow_template/.github/workflows/notify_on_push.yaml@master
