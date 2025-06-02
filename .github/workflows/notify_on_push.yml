@@ -3,6 +3,14 @@ name: Push notification on the Blocksta repository
 on: 
   push:
     branches: ['main']
+  workflow_call:
+    secrets:
+      GOMU_CHANEL_ID:
+        description: 'Specify the telegram channel id'
+        required: true
+      GOMU_BOT_TOKEN:
+        description: 'Specify telegram bot token'
+        required: true
 
 jobs:
   notify:
